@@ -1,39 +1,56 @@
 <template>
- <v-app>
- <v-app-bar style="padding: 0px 90px"
- app color="#243763" elevation="6" >
-     
-      <v-toolbar-title >
-       <v-img
-          :src="require('../assets/im.jpeg')"
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">  
+<header>
+<nav class="navbar navbar-expand-lg navigation-wrap">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+    <v-img
+          :src="require('../assets/lgo.png')"
           
           contain
-          height="200"
-          width="150"
-        />
-     </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-list-item link v-for="(menu,index) in menus" :key="index" :to="menu.route">
-      <v-list-item-title style="color:white">{{menu.title}}</v-list-item-title>
+          height="90"
+          width="90"
+        class="nj"
+        ></v-img>
+        
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <!--span class="navbar-toggler-icon"></span>-->
+      <i class="fas fa-stream navbar-toggler-icon"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+         <v-list-item link v-for="(menu,index) in menus" :key="index" :to="menu.route">
+          <v-list-item-title class="nav-link">{{menu.title}}</v-list-item-title>
       </v-list-item>
-    </v-app-bar>
-    <br><br><br>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+    
+<section class="main">
+<div class="container-fluid px-0 top-banner">
+<div class="container">
+<div class="row">
+<div class="col-lg-5 col-md-6">
+<h1>Welcome to <br> Our <span>Car Location </span> Service </h1>
 
-  <v-container class="pt-15">
-  <v-row>
-  <v-col lg="6">
-  <br><br><br><br><br>
-      <h2 class="intro-text">Welcome to our car location service</h2>
-      <p class="description">Voyagez à votre façon en choisissant parmi notre collection de voitures neuves. Que vous recherchiez une location de voiture dans le cadre de vacances ou que vous louiez une voiture pour un événement spécial, vous serez sûr de trouver une voiture adaptée à vos besoins </p>
-      <router-link :to="{name: 'affichage'}"><v-btn color="#FF6E31" rounded class="white--text"> Get started now ! </v-btn></router-link>
-  </v-col>
-  <v-col lg="6" >
-  <img src="https://img.freepik.com/vecteurs-libre/concept-interface-application-taxi_23-2148484167.jpg?w=900&t=st=1679672179~exp=1679672779~hmac=d59aafa6da2004ea899002841914b32bc9af514801fc5d878053990a1042c29a">
-  </v-col>
-  </v-row>
-  </v-container>
- </v-app>
+<p>Voyagez à votre façon en choisissant parmi notre collection de voitures celle adaptée à vos besoins.</p>
+<div class="mt-4">
+<button class="main-btn"> Get Started Now !<i class="fas fa-shopping-basket ps-3"></i></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body>
 </template>
+
 <script>
 
 
@@ -43,7 +60,8 @@ export default {
         return{
             menus:[
             {title:'Home',route:'userMenu'},
-            {title:'connect',route:'ae'},
+            {title:'Service',route:'userMenu'},
+            {title:'Space',route:'ae'},
 
             ]
         }
@@ -53,22 +71,134 @@ export default {
 </script>
 
 <style scoped>
- h2.intro-text{
-     font-size: 60px;
-     font-weight: 900;
-     color:#243763 ;
+
+
+ :root{
+     --primary-color:#950101;
+     --secondry-color: #FF0000;
+     --white-color: #fff;
+     --text-color: #3E3636;
      
+     --primary-front: 'Roboto','sans-serif';
+     --secondry-text: 'Quicksand','sans serif';
  }
- p.description{
-     font-size: 19px;
-     font-family: cursive;
-     margin: 32px 0px;
+ body{
+     font-family: var(--primary-font);
+     font-size: 100%;
+     font-weight: 400;
+ }
+ .navigation-wrap{
+     position: fixed;
+     width: 100%;
+     left:0;
+     z-index:1000;
+     -webkit-transition:all 0.3s ease-out;
+     transition:all 0.3 ease-out;
 
  }
- .v-toolbar-title{
-     font-size: 25px;
-     color: #FF6E31;
-     font-weight: 700;
-     font-family: Arial, Helvetica, sans-serif;
+ .nav-link{
+     color: white;
+     font-size: 0.9375rem;
+     font-weight: 600;
+     letter-spacing: 1px;
+     text-transform: capitalize;
+     
  }
+ .nav-link:hover,
+ .nav-link.active{
+     color:#950101;
+ }
+ .navigation-wrap .nav-item{
+     padding: 0 0.625rem;
+     transition: all 0.3s linear;
+ }
+ .navbar-toggler:focus{
+     outline:unset;
+     border: unset;
+     box-shadow:none;
+ }
+ 
+ .nj{
+     
+     border-radius: 100px;
+    padding: 30px;
+    
+ }
+ .top-banner{
+     width:100%;
+     background: url('http://cdn.shopify.com/s/files/1/0107/8955/2187/articles/how-to-keep-a-black-car-clean-the-ultimate-car-care-guide-821592_1024x1024.jpg?v=1661225494')no-repeat center;
+     background-size: cover;
+     padding: 16.875rem 0 9.375rem;
+     height: 100vh;
+
+ }
+
+h1{
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 1px 0 6px #000;
+}
+ h1 span{
+     color: #950101;
+ }
+ p{
+     font-size: 15px;
+     color: white;
+     font-weight: 400;
+     line-height: 1.75rem;
+     letter-spacing: 1px;
+ }
+ .main-btn{
+     display: inline-block;
+     padding: 0.625rem 1.875rem;
+     line-height: 1.5625rem;
+     background-color: black;
+     border: 0.1875rem solid #950101;
+     color: white;
+     font-size: 20px;
+     font-weight: 600;
+     text-transform: capitalize;
+     border-radius: 0.5rem;
+     box-shadow: 0px 2px 10px -1px rgb(0 0 0/ 19%);
+     -webkit-transition: all .4s ease-out 0s;
+     -o-transition: all .4s ease-out 0s;
+     -moz-transition: all .4s ease-out 0s;
+     transition: all .4s ease-out 0s;
+ }
+ .main-btn hover{
+     background-color: transparent;
+     color: #950101;
+ }
+ .nav-item{
+     display: flex; 
+     justify-content: center; 
+     align-items: center;
+ }
+@media (max-width:991px){
+    .text-content{
+        width: 100%;
+    }
+    .navigation-wrap .navbar-brand img{
+        height: 3.8125rem;
+    }
+    .navigation-wrap{
+        text-align: center;
+        background-color: #950101;
+       
+    }
+    .navigation-wrap .nav-link{
+        line-height: 1.875rem;
+        color: black;
+    }
+     .navigation-wrap .nav-link{
+        line-height: 1.875rem;
+        color: black;
+    }
+    .top-banner{
+        padding: 40% ;
+    }
+    
+}
  </style>
