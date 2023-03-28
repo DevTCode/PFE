@@ -20,8 +20,8 @@
       
    
     
-    <v-text-field v-model="email" label="email" class="e"></v-text-field>
-    <v-text-field v-model="password" label="Mot de passe" type="password" class="psw"></v-text-field>
+    <i class="bi bi-envelope-at-fill" style="color:white"></i><v-text-field v-model="email" label="email" class="e"></v-text-field>
+    <i class="bi bi-key-fill" style="color:white"></i><v-text-field v-model="password" label="Mot de passe" type="password" class="psw"></v-text-field>
     
     <v-btn class="btn1 mt-3 mb-5" @click="login"> <b class="b">Login</b></v-btn>
     
@@ -86,7 +86,7 @@
    color: #950101;
  }
  h4{
-   color: #3E3636;
+   color: #7c7878;
    padding: 10px;
    font-family: Arial, Helvetica, sans-serif;
  }
@@ -123,7 +123,7 @@ export default {
         config: { headers: {'Content-Type': 'application/x-www-form-urlencoded'}},
       })
        .then((response) => {
-         this.$router.push('/');
+         this.$router.push('/ad');
          
        })
      .catch((error) => {
@@ -133,3 +133,4 @@ export default {
   }
 }
 </script>
+
