@@ -23,6 +23,7 @@ import EditTypeMoteur from '@/components/EditTypeMoteur';
 import AddTypeVoiture from '@/components/AddTypeVoiture';
 import EditTypeVoiture from '@/components/EditTypeVoiture';
 import CarAdd from '@/components/CarAdd';
+import AdminDashboard from '@/components/AdminDashboard';
 
 
     const routes = [
@@ -142,6 +143,12 @@ import CarAdd from '@/components/CarAdd';
   name: 'CarAdd',
   component: CarAdd
 },
+{
+  path: '/ad',
+  name: 'AdminDashboard',
+  component: AdminDashboard
+},
+
     ]
 
 const router = createRouter({
