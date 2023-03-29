@@ -35,18 +35,18 @@
 <section class="main">
 <div class="container-fluid px-0 top-banner">
 <div class="container">
-<div class="row">
+
 <div class="col-lg-5 col-md-6">
 <h1>Welcome to <br> Our <span>Car Location </span> Service </h1>
 
 <p>Voyagez à votre façon en choisissant parmi notre collection de voitures celle adaptée à vos besoins.</p>
 <div class="mt-4">
-<button class="main-btn"> Get Started Now !<i class="fas fa-shopping-basket ps-3"></i></button>
+<router-link :to="{name: 'CarList'}" class="custom-link">  <v-row class="my-custom-class"><button class="main-btn"> Get Started Now !<i class="fas fa-shopping-basket ps-3"></i></button></v-row></router-link>
 </div>
 </div>
 </div>
 </div>
-</div>
+
 </section>
 </body>
 </template>
@@ -59,7 +59,7 @@ export default {
     data() {
         return{
             menus:[
-            {title:'Home',route:'userMenu'},
+            {title:'Home',route:'me'},
             {title:'Service',route:'userMenu'},
             {title:'Space',route:'ae'},
 
@@ -123,6 +123,10 @@ export default {
      border-radius: 100px;
     padding: 30px;
     
+    
+ }
+ .custom-link{
+     color: #000;
  }
  .top-banner{
      width:100%;
