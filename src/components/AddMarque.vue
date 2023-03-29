@@ -1,11 +1,12 @@
 <template>
-  <body>
-  <br><br><br><br><br>
+
+  <body id="f">
+  <br><br><br>
     <section class="form">
     <div class="container">
     <div class="row no-gutters">
     <div class="col-lg-5">
-    <v-img :src="require('../assets/bc.jpg')" contain class="nj"></v-img>
+    <v-img :src="require('../assets/c.jpg')" contain class="nj"></v-img>
     </div>
     <div class="col-lg-7">
     <v-img
@@ -85,16 +86,23 @@
    border: 1px solid;
    color: #950101;
  }
+ #f{
+   background-color: black;
+   height: 812px;
+   
+ }
  h4{
    color: #7c7878;
-   padding: 10px;
+   padding: 2px;
    font-family: Arial, Helvetica, sans-serif;
  }
  h2{
    color: white;
+   font-size: 100px;
    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
    
  }
+
 </style>
 
 <script>
@@ -128,4 +136,5 @@ export default {
 
 
 </script>
+
 
