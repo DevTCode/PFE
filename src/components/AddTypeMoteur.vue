@@ -1,11 +1,12 @@
 <template>
-  <body>
-  <br><br><br><br><br>
+  <body id="f">
+
+  <br><br><br>
     <section class="form">
     <div class="container">
     <div class="row no-gutters">
     <div class="col-lg-5">
-    <v-img :src="require('../assets/bc.jpg')" contain class="nj"></v-img>
+    <v-img :src="require('../assets/c.jpg')" contain class="nj"></v-img>
     </div>
     <div class="col-lg-7">
     <v-img
