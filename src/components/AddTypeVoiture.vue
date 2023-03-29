@@ -1,16 +1,16 @@
 <template>
-  <body>
-  <br><br><br><br><br>
+  <body id="f">
+  <br><br><br>
     <section class="form">
     <div class="container">
     <div class="row no-gutters">
     <div class="col-lg-5">
-    <v-img :src="require('../assets/bc.jpg')" contain class="nj"></v-img>
+    <v-img :src="require('../assets/c.jpg')" contain class="nj"></v-img>
     </div>
     <div class="col-lg-7">
     <v-img
           :src="require('../assets/lgo.png')" contain height="30%" width="26%" class="n"></v-img>
-          <h4>Ajout du type de voiture</h4>
+          <h4>Ajout du type de moteur</h4>
     <v-form @submit.prevent="submit" >
   
   
@@ -23,7 +23,7 @@
     <v-text-field v-model="libelle" label="libelle" class="e"></v-text-field>
    
     
-    <v-btn class="btn1 mt-3 mb-5" @click="saveTypeVoiture"> <b class="b">Add</b></v-btn>
+    <v-btn class="btn1 mt-3 mb-5" @click="saveTypeMoteur"> <b class="b">Add</b></v-btn>
     
   </v-form>
     </div>
@@ -36,28 +36,27 @@
 
 
 
-<style>
 
+
+<style>
  .b{
      color: white;
  }
  .row{
    background: black;
    border-radius:20px ;
-   width:100%;
+   width:95%;
    padding: 2%;
    box-shadow: 12px 12px 22px #950101;
    
  }
-
  *{
    padding: 0;
    margin:0;
    box-sizing: border-box;
  }
-
  .nj{
-   width: 690%;
+   width: 90%;
    height: 120%;
    border-top-left-radius: 30px;
    border-bottom-left-radius: 30px;
@@ -92,39 +91,43 @@
  }
  h2{
    color: white;
+   font-size: 100px;
    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
    
  }
 </style>
+
+
 <script>
 import axios from 'axios';
 export default {
-     name:"AddTypeVoiture",
-     data(){
-         return {
-             
-             libelle:'',
-         };
-     },
-     
-     methods:{
-        async saveTypeVoiture(){
-             try {
-                 await axios.post('http://127.0.0.1:8000/api/typevoiture',
-                {
-                 libelle:this.libelle
-                 });
-                  this.libelle="";
-                  this.$router.push('/tv');
-                
-             } catch (error) {
-                 console.log(error);
-             }
-         } ,
-          
-     },
+  data() {
+    return {
+      form: {
+        email: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    async login() {
+      let bodyFormData = new FormData();
+      bodyFormData.set("email",this.email);
+      bodyFormData.set("password",this.password);
+      axios({
+        method: "post",
+        url: 'http://localhost:8000/api/log',
+        data: bodyFormData,
+        config: { headers: {'Content-Type': 'application/x-www-form-urlencoded'}},
+      })
+       .then((response) => {
+         this.$router.push('/ad');
+         
+       })
+     .catch((error) => {
+       console.log("error");
+     })
+    }
+  }
 }
-
-
 </script>
-
