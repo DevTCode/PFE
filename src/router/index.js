@@ -3,7 +3,6 @@ import {createRouter , createWebHistory} from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import EditCar from '@/components/EditCar'
 import AddCar from '@/components/AddCar'
-import CarList from '@/components/CarList'
 import search from '@/components/search'
 import ImageList from '@/components/ImageList'
 import TypemoteurList from '@/components/TypemoteurList'
@@ -14,7 +13,6 @@ import RegisterForum from "@/components/RegisterForum";
 import menu from '@/components/menu';
 import adminMailForum from '@/components/adminMailForum';
 import EmailRegister from '@/components/EmailRegister';
-import UserList from '@/components/UserList';
 import affichage from '@/components/affichage';
 import AddMarque from '@/components/AddMarque';
 import Editmarque from '@/components/Editmarque';
@@ -27,11 +25,7 @@ import AdminDashboard from '@/components/AdminDashboard';
 
 
     const routes = [
-        {
-            path: '/',
-            name: 'CarList',
-            component: CarList
-        },
+      
         {
           path: '/s',
           name: 'search',
@@ -112,11 +106,7 @@ import AdminDashboard from '@/components/AdminDashboard';
           name: 'EmailRegister',
           component: EmailRegister
       },
-      {
-          path: '/ul',
-          name: 'UserList',
-          component: UserList
-      },
+ 
       {
         path: '/affi',
         name: 'affichage',
@@ -157,3 +147,4 @@ const router = createRouter({
 })
 
 export default router
+
