@@ -1,22 +1,22 @@
 <template>
 
   <body id="f">
-  <br><br><br>
+  <br><br>
     <section class="form">
     <div class="container">
     <div class="row no-gutters">
     <div class="col-lg-5">
-    <v-img :src="require('../assets/ed.jpg')" contain class="nj"></v-img>
+    <v-img :src="require('../assets/ed.jpg')" contain class="s"></v-img>
     </div>
     <div class="col-lg-7">
     <v-img
           :src="require('../assets/lgo.png')" contain height="30%" width="26%" class="n"></v-img>
-          <h4>Ajout du nom de la marque</h4>
+         
     <v-form @submit.prevent="submit" >
   
   
       <v-col cols="auto">
-        <h2>Libelle</h2>
+        <h2>Marque</h2>
       </v-col>
       
    
@@ -54,16 +54,18 @@
  *{
    padding: 0;
    margin:0;
+   
    box-sizing: border-box;
  }
 
- .nj{
-   width: 690%;
+ .s{
+   width: 90%;
    height: 120%;
    border-top-left-radius: 30px;
    border-bottom-left-radius: 30px;
    
  }
+ 
  .e{
    color: white;
    background-color: transparent;
@@ -89,6 +91,9 @@
  #f{
    background-color: white;
    height: 812px;
+   display: block;
+    padding-left: 10%;
+    
    
  }
  h4{
@@ -148,4 +153,6 @@ export default {
 }
 
 </script>
+
+
 
