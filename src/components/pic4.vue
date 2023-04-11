@@ -17,16 +17,20 @@
 <br><br><br><br><br><br>
 <a href="#" style="color:red" class="list-group-item list-group-item-action bg-transparen second-text fw-bold" @click="logout"><i style="color:red" class="bi bi-box-arrow-right"></i><i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>se déconnecter</a>
 </div>
-     </v-navigation-drawer>
+    </v-navigation-drawer>
        <div id="page-content-wrapper" >
        <div class="container-fluid px-4">
           <div class="d-flex justify-center align-center h-100">
-            <v-btn style="margin-right: 1600px; margin-bottom: 20px;position: relative;background-color:black" @click.stop="drawer = !drawer">
+            <v-btn style="margin-right: 950px; margin-bottom: 20px;position: relative;background-color:black" @click.stop="drawer = !drawer">
                 <i class="bi bi-list" style="color:white;font-size:30px"></i>
+                <h5 style="color:white">ichraq assim</h5> 
                 <header class="header" id="header">
-        <div class="header_toggle"> </div>
+                
+        <div class="header_toggle"></div>
         <div class="header_img"> <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-user-image-179582665.jpg" alt=""> </div>
+    
     </header>
+    
 
 
  </v-btn>
