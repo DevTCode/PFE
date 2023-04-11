@@ -10,7 +10,7 @@
           contain
           height="90"
           width="90"
-        class="nj"
+          class="nj"
         ></v-img>
         
     </a>
@@ -37,11 +37,11 @@
 <div class="container">
 
 <div class="col-lg-5 col-md-6">
-<h1>Welcome to <br> Our <span>Car Location </span> Service </h1>
+<h1>Bienvenue dans  <br> notre <span>Service de location de  </span> voiture </h1>
 
 <p>Voyagez à votre façon en choisissant parmi notre collection de voitures celle adaptée à vos besoins.</p>
 <div class="mt-4">
-<router-link :to="{name: 'CarList'}" class="custom-link">  <v-row class="my-custom-class"><button class="main-btn"> Get Started Now !<i class="fas fa-shopping-basket ps-3"></i></button></v-row></router-link>
+<v-row class="my-custom-class"><button class="main-btn"> Commencez dés maintenant !<i class="fas fa-shopping-basket ps-3"></i></button></v-row>
 </div>
 </div>
 </div>
@@ -59,9 +59,10 @@ export default {
     data() {
         return{
             menus:[
-            {title:'Home',route:'me'},
-            {title:'Service',route:'userMenu'},
-            {title:'Space',route:'ae'},
+            {title:'Acceuil',route:'me'},
+            {title:'Contact',route:'co'},
+            {title:'compte',route:'u'},
+            {title:'space',route:'ae'},
 
             ]
         }
@@ -180,6 +181,7 @@ h1{
      justify-content: center; 
      align-items: center;
  }
+ 
 @media (max-width:991px){
     .text-content{
         width: 100%;
