@@ -10,7 +10,7 @@
 <div class="list-group list-group-flush my-3">
 <router-link :to="{name: 'AdminDashboard'}" class="custom-link"><a href="#" class="list-group-item list-group-item-action bg-transparen second-text fw-bold"><i class="bi bi-car-front"></i><i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>All</a></router-link>
 <router-link :to="{name: 'MarqueList'}" class="custom-link"><a href="#" class="list-group-item list-group-item-action bg-transparen second-text fw-bold"><i class="bi bi-ev-front-fill"></i><i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>Marques</a></router-link>
-<router-link :to="{name: 'TypemoteurList'}" class="custom-link"><a href="#" class="list-group-item list-group-item-action bg-transparen second-text fw-bold" style="color:#950101;background-color:white"><i  class="bi bi-text-wrap" ></i><i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>Types de Moteur</a></router-link>
+<router-link :to="{name: 'TypemoteurList'}" class="custom-link"><a href="#" class="list-group-item list-group-item-action bg-transparen second-text fw-bold"><i  class="bi bi-text-wrap" ></i><i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>Types de Moteur</a></router-link>
 <router-link :to="{name: 'TypeVoitureList'}" class="custom-link"><a href="#" class="list-group-item list-group-item-action bg-transparen second-text fw-bold"><i class="bi bi-text-paragraph"></i><i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>Types de Voiture</a></router-link>
 <router-link :to="{name: 'ImageList'}" class="custom-link"><a href="#" class="list-group-item list-group-item-action bg-transparen second-text fw-bold"><i class="bi bi-text-paragraph"></i><i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>Images</a></router-link>
 <router-link :to="{name: 'locations'}" class="custom-link"><a href="#" class="list-group-item list-group-item-action bg-transparen second-text fw-bold"><i class="bi bi-text-paragraph"></i><i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>Reservations</a></router-link>
@@ -68,7 +68,7 @@
         <td style="color : white"><b>{{ item.numero_chassis }}</b></td>
         <td >
         <button type="button" class="btn" @click="deleteCar(item.id)"> <v-btn variant="flat" color="error"> <i class="bi bi-trash3-fill"></i>Delete</v-btn></button>
-        <router-link :to="{name: 'EditCar' , params:{id:item.id}}" style="color:black"> <v-btn variant="flat" color="black"><i class="bi bi-pencil-square"></i>Edit</v-btn></router-link>
+        <router-link :to="{name: 'EditCar' , params:{id:item.id}}" style="color:white"> <v-btn variant="flat" color="white"><i class="bi bi-pencil-square"></i>Edit</v-btn></router-link>
         
         </td>
       </tr>
