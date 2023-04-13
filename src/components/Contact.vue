@@ -53,7 +53,7 @@
   
   <h4 style="color:white">Contactez-nous</h4>
       <v-col cols="auto">
-        <h2 style="color:white;font-weight:600px">Votre Message</h2>
+        <h4 style="color:white;font-weight:600;font-size:30px">Votre Message</h4>
       </v-col>
       
    
@@ -412,10 +412,10 @@ export default ({
          return {
              
              menus:[
-            {title:'Acceuil',route:'us'},
+            {title:'Acceuil',route:'voiture'},
             {title:'menu',route:'me'},
-            {title:'compte',route:'ud'},
-            {title:'space',route:'ad'},
+            {title:'compte',route:'profile'},
+            {title:'space',route:'co'},
 
             ]
         
