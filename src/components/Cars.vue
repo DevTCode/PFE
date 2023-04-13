@@ -21,9 +21,9 @@
        <div id="page-content-wrapper" >
        <div class="container-fluid px-4">
           <div class="d-flex justify-center align-center h-100">
-            <v-btn style="margin-right: 1000px; margin-bottom: 20px;position: relative;background-color:black" @click.stop="drawer = !drawer">
+            <v-btn style="margin-right: 950px; margin-bottom: 20px;position: relative;background-color:black" @click.stop="drawer = !drawer">
                 <i class="bi bi-list" style="color:white;font-size:30px"></i>
-                <h5 style="color:white">ichraq</h5> 
+                <h5 style="color:white">ichraq assim</h5> 
                 <header class="header" id="header">
                 
         <div class="header_toggle"></div>
@@ -68,7 +68,7 @@
         <td style="color : white"><b>{{ item.numero_chassis }}</b></td>
         <td >
         <button type="button" class="btn" @click="deleteCar(item.id)"> <v-btn variant="flat" color="error"> <i class="bi bi-trash3-fill"></i>Delete</v-btn></button>
-        <router-link :to="{name: 'EditCar' , params:{id:item.id}}" style="color:black"> <v-btn variant="flat" color="black"><i class="bi bi-pencil-square"></i>Edit</v-btn></router-link>
+        <router-link :to="{name: 'EditCar' , params:{id:item.id}}" style="color:white"> <v-btn variant="flat" color="white"><i class="bi bi-pencil-square"></i>Edit</v-btn></router-link>
         
         </td>
       </tr>
@@ -103,6 +103,58 @@
 </template>
 
 
+
+<script>
+import axios from 'axios';
+//import { reactive } from 'vue';
+//import LaravelVuePagination from 'laravel-vue-pagination'
+
+export default {
+     name:"CarList",
+    
+     data(){
+         return {
+             items:[],
+              drawer: null,
+        }
+    },
+      
+  
+     created(){
+         this.getCars();
+     },
+     methods:{
+     
+        async getCars(){
+             try {
+                 const response = await axios.get('http://127.0.0.1:8000/api/c');
+                 this.items = response.data;
+                 console.log(response.data);
+             } catch (error) {
+                 console.log(error);
+             }
+         } ,
+         async deleteCar(id){
+              try {
+                await axios.delete('http://127.0.0.1:8000/api/cars/'+id);
+                  this.getCars();
+              } catch (error) {
+                   console.log(error);
+              }
+         },
+     
+         async  logout() {
+         localStorage.removeItem('token');
+            this.$router.push('/me');
+          
+       
+}
+}
+}
+
+</script>
+
+
 <style scoped>
 :rout {
     --main-bg-color: black;
@@ -118,6 +170,13 @@
 }
 .primary-bg{
     background-color: var(--main-bg-color);
+}
+
+.secondry-bg{
+    background-color: var(--second-bg-color);
+}
+.rounded-full{
+    border-radius: 100%;
 }
 .header{
           width: 100%;
@@ -152,6 +211,128 @@ display: flex;
 .header_img img{
 width: 40px
  }
+#wrapper{
+    overflow-x: hidden;
+   background-color: white;
+   height: 812px;
+}
+#sidebar-wrapper{
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin 0.25s ease-out;
+}
+#sidebar-wrapper .sidebar-heading{
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+#sidebar-wrapper .list-group{
+    width:15rem;
+}
+#page-content-wrapper{
+    
+  background-size: cover;
+  height: 812px;
+
+    background-image: url('https://wallpapercrafter.com/desktop/119635-Mazda-RX-Vision-concept-cars-car-vehicle-red-cars.jpg');
+     background-repeat: no-repeat;
+ 
+  background-position: center center;
+}
+    
+
+.l{
+    width: 80%;
+    height: 55px;
+    
+}
+#wrapper.toggled #sidebar-wrapper{
+    margin-left: 0;
+}
+#menu-toggle{
+    cursor: pointer;
+}
+.list-group-item{
+    border: none;
+    
+    padding: 20px 30px;
+    width: 100%;
+    color: black;
+    background-color: white;
+
+}
+#navbarDropdown{
+    font-size: 18px;
+    color: white;
+}
+.list-group-item.active{
+    background-color: transparent;
+    color:var(--main-text-color);
+    font-weight: bold;
+    border: none;
+}
+.cr{
+    color: white;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    
+}
+ .main-btn{
+     display: inline-block;
+     padding: 0.625rem 1.875rem;
+     line-height: 1rem;
+     background-color: white;
+    
+     color: #950101;
+     font-size: 20px;
+     font-weight: 600;
+     text-transform: capitalize;
+     border-radius: 2rem;
+     box-shadow: 0px 2px 10px -1px white;
+     -webkit-transition: all .4s ease-out 0s;
+     -o-transition: all .4s ease-out 0s;
+     -moz-transition: all .4s ease-out 0s;
+     transition: all .4s ease-out 0s;
+     
+ }
+ .main-btn hover{
+     background-color: transparent;
+     color: black;
+ }
+@media(min-width:768px){
+    #sidebar-wrapper{
+        margin-left: 0;
+    }
+    #page-content-wrapper{
+        min-width: 0;
+        width: 100%;
+      
+    }
+    #wrapper.toggled #sidebar-wrapper{
+        margin-left: -15rem;
+    }
+    .custom-link{
+        color: black;
+    }
+}
+</style>
+<style>
+:rout {
+    --main-bg-color: black;
+    --main-text-color: #950101;
+    --second-text-color: white;
+    --second-bg-color: grey;
+}
+.primary-text{
+    color: var(--main-text-color);
+}
+.second-text{
+    color: var(--second-text-color);
+}
+.primary-bg{
+    background-color: var(--main-bg-color);
+}
+
 .secondry-bg{
     background-color: var(--second-bg-color);
 }
@@ -264,56 +445,3 @@ width: 40px
 }
 </style>
 
-
-
-<script>
-import axios from 'axios';
-//import { reactive } from 'vue';
-//import LaravelVuePagination from 'laravel-vue-pagination'
-
-export default {
-     name:"CarList",
-    
-     data(){
-         return {
-             items:[],
-             drawer: null,
-             
-        }
-    },
-      
-  
-     created(){
-         this.getCars();
-     },
-     methods:{
-     
-        async getCars(){
-             try {
-                 const response = await axios.get('http://127.0.0.1:8000/api/c');
-                 this.items = response.data;
-                 console.log(response.data);
-             } catch (error) {
-                 console.log(error);
-             }
-         } ,
-         async deleteCar(id){
-              try {
-                await axios.delete('http://127.0.0.1:8000/api/cars/'+id);
-                  this.getCars();
-              } catch (error) {
-                   console.log(error);
-              }
-         },
-     
-          async  logout() {
-         localStorage.removeItem('token');
-            this.$router.push('/me');
-          
-       
-}
-        
-}
-}
-
-</script>
