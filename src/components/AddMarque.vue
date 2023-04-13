@@ -4,7 +4,7 @@
 <br><br>
     <section class="form">
     <div class="container">
-    <div class="row no-gutters">
+    <div class="row no-gutters" style="width:1300px">
     <div class="col-lg-5" style="width:500px;padding:40px">
     <v-img :src="require('../assets/c.jpg')" contain class="h"></v-img>
     </div>
@@ -16,7 +16,7 @@
   
   
       <v-col cols="auto">
-        <h2>Marque</h2>
+        <h4 style="color:white;font-weight:600;font-size:30px">Marque</h4>
       </v-col>
       
    
@@ -24,7 +24,7 @@
     <v-text-field v-model="libelle" label="libelle" class="e"></v-text-field>
    
     
-    <v-btn class="btn1 mt-3 mb-5" @click="saveMarque"> <b class="b">Add</b></v-btn>
+    <v-btn class="btn1 mt-3 mb-5" @click="saveMarque"> <b class="b">Ajouter</b></v-btn>
     
   </v-form>
     </div>
@@ -93,6 +93,7 @@
  h2{
    color: white;
    font-size: 100px;
+   
    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
    
  }
@@ -130,7 +131,4 @@ export default {
 
 
 </script>
-
-
-
 
