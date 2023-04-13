@@ -3,7 +3,7 @@
 <br><br>
     <section class="form">
     <div class="container">
-    <div class="row no-gutters">
+    <div class="row no-gutters" style="width:1300px">
     <div class="col-lg-5">
     <v-img :src="require('../assets/type.jpg')" contain class="q"></v-img>
     </div>
@@ -15,7 +15,7 @@
   
   
       <v-col cols="auto">
-        <h2>Type de voiture</h2>
+         <h4 style="color:white;font-weight:600;font-size:30px">Type de voiture</h4>
       </v-col>
       
    
@@ -23,7 +23,7 @@
     <v-text-field v-model="libelle" label="libelle" class="e"></v-text-field>
    
     
-    <v-btn class="btn1 mt-3 mb-5" @click="saveTypeVoiture"> <b class="b">Add</b></v-btn>
+    <v-btn class="btn1 mt-3 mb-5" @click="saveTypeVoiture"> <b class="b">Ajouter</b></v-btn>
     
   </v-form>
     </div>
@@ -129,4 +129,3 @@ export default {
      },
 }
 </script>
-
