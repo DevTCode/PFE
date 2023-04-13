@@ -5,7 +5,7 @@
  <br><br><br>
     <section class="form">
     <div class="container">
-    <div class="row no-gutters">
+    <div class="row no-gutters"  style="width:1300px">
     <div class="col-lg-5"  style="height:560px">
     <v-img :src="require('../assets/h.jpg')" contain class="h"></v-img>
     </div>
@@ -17,7 +17,7 @@
   
   
       <v-col cols="auto">
-        <h2>Image</h2>
+        <h4 style="color:white;font-weight:600;font-size:30px">Image</h4>
       </v-col>
       
    
@@ -33,7 +33,7 @@
        </div>
    <br>
     
-    <v-btn class="btn1 mt-3 mb-5"> <b class="b">Add</b></v-btn>
+    <v-btn class="btn1 mt-3 mb-5"> <b class="b">Ajouter</b></v-btn>
     
     </v-form>
     </div>
