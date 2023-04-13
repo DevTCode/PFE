@@ -45,9 +45,11 @@
   margin: auto;width:80%;margin-right: 45px;height=20px;border: 2px solid white;background-color:black;opacity:80%">
   <thead>
     <tr>
+     <th scope="col" style="color : white">voiture</th>
       <th scope="col" style="color : white">numero de location</th>
       <th scope="col" style="color : white">nom du client</th>
       <th scope="col" style="color : white">Prenom du client</th>
+ 
       <th scope="col" style="color : white">date de debut</th>
       <th scope="col" style="color : white">date de fin</th>
       <th scope="col" style="color : white">Prix</th>
@@ -56,20 +58,22 @@
   </thead>
   <tbody>
     <tr v-for="item in items" :key="item.id">
-        
-        <td style="color:white"><b>{{ item.idLocation }}</b></td>
+       <td><img :src="`http://localhost:8000/storage/images/${item.image}`" class="lp" style="width:140px"></td>
+        <td style="color:white"><b>{{ item.id }}</b></td>
         <td style="color:white"><b>{{ item.nom }}</b></td>
         <td style="color:white"><b>{{ item.prenom }}</b></td>
+         
         <td style="color:white"><b>{{ item.dateL }}</b></td>
         <td style="color:white"><b>{{ item.dateR }}</b></td>
         <td style="color:white"><b>{{ item.prix }}</b></td>
         <td>
-        <button type="button" class="btn" @click="deleteMarque(item.id)"> <v-btn variant="flat" color="green" >Confirmer</v-btn></button>
-        <router-link :to="{name: 'facture'}"  style="color:white"> <v-btn variant="flat" color="error">Refuser</v-btn></router-link>
+        <button type="button" class="btn" @click="deleteloc(item.id)"> <v-btn variant="flat" color="error" >refuser</v-btn></button>
+        <router-link :to="{name: 'facture', params:{id:item.id}}"  style="color:white"> <v-btn variant="flat" color="green" @click="saveFact">confirmer</v-btn></router-link>
         </td>
       </tr>
   </tbody>
 </table>
+
 <br>
 <div class="text-center">
    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style="display:block">
@@ -77,7 +81,7 @@
        <router-link :to="{name:'locations'}" style="color:black"><v-btn>1</v-btn></router-link>
    </div>
    <div class="btn-group me-2" role="group" aria-label="Second group">
-       <router-link :to="{name:'loc'}" style="color:black"><v-btn>2</v-btn></router-link>
+       <router-link :to="{name:'loca'}" style="color:black"><v-btn>2</v-btn></router-link>
        <i class="bi bi-chevron-right" style="color:red;font-weight:600;font-size:19px"></i>
    </div>
   
@@ -395,6 +399,9 @@ export default {
      data(){
          return {
              items:[],
+             idloc:'',
+             idcar:'',
+             total:'',
               drawer: null,
              menus:[
             {title:'Home',route:'/'},
@@ -406,6 +413,8 @@ export default {
      },
      created(){
          this.getLocations();
+         this.deleteloc();
+        
      },
      methods:{
         async getLocations(){
@@ -416,23 +425,23 @@ export default {
                  console.log(error);
              }
          } ,
-         async deleteMarque(id){
+       
+  async deleteloc(id){
               try {
-                await axios.delete('http://127.0.0.1:8000/api/marques/'+id);
-                  this.getMarques();
+                await axios.delete('http://127.0.0.1:8000/api/locations/'+id);
+                  this.getLocations();
               } catch (error) {
                    console.log(error);
               }
          },
-                async  logout() {
+         async  logout() {
          localStorage.removeItem('token');
             this.$router.push('/me');
           
        
 }
-
      }
 }
-
+     
 
 </script>
