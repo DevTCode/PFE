@@ -4,7 +4,7 @@
   <br>
     <section class="form">
     <div class="container">
-    <div class="row no-gutters">
+    <div class="row no-gutters" style="width:1300px">
     <div class="col-lg-5">
     <v-img :src="require('../assets/ETM.jpg')" contain class="j"></v-img>
     </div>
@@ -16,7 +16,7 @@
   
   
       <v-col cols="auto">
-        <h2>Type de moteur</h2>
+        <h4 style="color:white;font-weight:600;font-size:30px">Type de moteur</h4>
       </v-col>
       
    
@@ -24,7 +24,7 @@
     <v-text-field v-model="libelle" label="libelle" class="e"></v-text-field>
    
     
-    <v-btn class="btn1 mt-3 mb-5" @click="updateTypeMoteur"> <b class="b">Update</b></v-btn>
+    <v-btn class="btn1 mt-3 mb-5" @click="updateTypeMoteur"> <b class="b">Modifier</b></v-btn>
     
   </v-form>
     </div>
