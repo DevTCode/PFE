@@ -130,7 +130,7 @@ export default {
      
         async getCars(){
              try {
-                 const response = await axios.get('http://127.0.0.1:8000/api/all');
+                 const response = await axios.get('http://127.0.0.1:8000/api/al');
                  this.items = response.data;
                  console.log(response.data);
              } catch (error) {
