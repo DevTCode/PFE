@@ -1,10 +1,11 @@
+
 <template>
 
   <body id="f">
  <br>
     <section class="form">
     <div class="container">
-    <div class="row no-gutters">
+    <div class="row no-gutters" style="width:1300px">
     <div class="col-lg-5" style="width:400px;padding:40px">
     <v-img :src="require('../assets/carAdd.jpg')" contain class="p"></v-img>
     </div>
@@ -29,7 +30,7 @@
   >
     
    <v-carousel-item v-for="page in pages" :key="page" cover>
-      <h2>Page {{ page }}</h2>
+      <h2 >Page {{ page }}</h2>
     </v-carousel-item>
       <v-carousel-item
         v-for="ichraq in ichraqs" :key="ichraq.id"
@@ -81,7 +82,7 @@
        <v-text-field v-model="numero_chassis" label="numero_chassis" class="k"></v-text-field>
    
     
-   <v-btn class="btn1 mt-3 mb-5" @click="saveCar"> <b class="b">Add</b></v-btn>
+   <v-btn class="btn1 mt-3 mb-5" @click="saveCar"> <b class="b">Ajouter</b></v-btn>
     
   </v-form>
     </div>
@@ -148,6 +149,7 @@
    
    
  }
+ 
  h4{
    color: #7c7878;
    padding: 2px;
