@@ -4,7 +4,7 @@
   <br>
     <section class="form">
     <div class="container">
-    <div class="row no-gutters">
+    <div class="row no-gutters" style="width:1300px">
     <div class="col-lg-5">
     <v-img :src="require('../assets/E.jpg')" contain class="n"></v-img>
     </div>
@@ -78,7 +78,7 @@
        <v-text-field v-model="numero_chassis" label="numero_chassis" class="k"></v-text-field>
    
     
-   <v-btn class="btn1 mt-3 mb-5" @click="updateCar"> <b class="b">update</b></v-btn>
+   <v-btn class="btn1 mt-3 mb-5" @click="updateCar"> <b class="b">Modifier</b></v-btn>
     
   </v-form>
     </div>
