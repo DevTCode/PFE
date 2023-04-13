@@ -61,7 +61,7 @@ export default {
             menus:[
             {title:'Acceuil',route:'me'},
             {title:'Contact',route:'co'},
-            {title:'compte',route:'u'},
+            {title:'compte',route:'profile'},
             {title:'space',route:'ae'},
 
             ]
