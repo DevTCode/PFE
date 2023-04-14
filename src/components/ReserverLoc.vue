@@ -131,7 +131,7 @@
                    </label>
                  </div>
                  <div class="field padding-bottom--24">
-                   <v-btn @click="idloc(),prix()"  class="cr" style="margin-left: 100px;  ">
+                   <v-btn @click="idloc(),prix()"  class="cr2" style="margin-left: 100px;  ">
       Completer la reservation
  
        <v-icon icon="mdi-chevron-right" end></v-icon>
@@ -141,17 +141,18 @@
                </form>
              </div>
            </div>
-           <div  class="formbg" id="recu" v-for="v in vs"   :key="v.idLocation"  v-show="a1" style="border-radius:5%; height:400px;">
+           <div  class="formbg" id="recu" v-for="v in vs"   :key="v.ide"  v-show="a1" style="border-radius:5%; height:400px;">
+          <h4 style="color:#950101;text-align:center">Recu de réservation</h4> <br><br><br>  
              <h6> votre prix  de location de voiture est : {{v.prix_location}} DH </h6>
              <h6>   Marque : {{v.marque }}        
             <br>   Type Moteur :{{v.typemoteur}}<br>
              Type Voiture {{v.typevoiture}} 
             <br></h6>
-             <h6>  de location de voiture d id :  {{v.id}}</h6>
-             <h6> et d id de location :  {{ v.idLocation}}</h6>
+             <h6>  de location de voiture de numero :  {{v.id}}</h6>
+             <h6> et de numero de location :  {{ v.ide}}</h6>
            
-             <v-btn @click="generatePDF"  class="cr" style="margin-left:170px; margin-top: 200px;  ">
-    confirmer 
+             <v-btn @click="generatePDF"  class="cr2" style=" margin-top: 70px; margin-left:100px ">
+    telecharger recu 
   <v-icon icon="mdi-chevron-right" end></v-icon>
      </v-btn>
  
@@ -165,7 +166,7 @@
              <h6>  de location de voiture d id :  {{v.id}}</h6>
              <h6> et d id de location :  {{v.idLocation}}</h6>
            
-             <v-btn   class="cr" style="margin-left:170px; margin-top: 200px;  ">
+             <v-btn   class="cr2" style="margin-left:170px; margin-top: 200px;  ">
  telecharger recu 
   <v-icon icon="mdi-chevron-right" end></v-icon>
      </v-btn>
@@ -202,10 +203,10 @@ import 'v-calendar/dist/style.css';
    return {
     ti:'',
      menus:[
-       { title: "Accueil", route: "/" },
+       { title: "Accueil", route: "/voiture" },
      
-       { title: "Contact", route: "/contact" },
-       { title: "Compte", route:  this.ti},
+       { title: "Contact", route: "/co" },
+       { title: "Compte", route:  "/profile"},
        
      
      ],
@@ -292,7 +293,7 @@ console.log(response.data);
        
 
        
-Identifiant de  location : ${this.vs[0].idLocation}
+Identifiant de  location : ${this.vs[0].ide}
 
  Identifiant de voiture : ${this.vs[0].id}
 
@@ -661,7 +662,7 @@ Identifiant de  location : ${this.vs[0].idLocation}
                  rgba(0, 0, 0, 0) 0px 0px 0px 0px;
  }
  
-  .cr {
+  .cr2 {
      background-color: #950101;
      box-shadow: #3E3636 0px 0px 0px 0px, 
      #3E3636 0px 0px 0px 0px, 
@@ -670,8 +671,10 @@ Identifiant de  location : ${this.vs[0].idLocation}
                   #3E3636 px 0px 0px 0px, 
                   #3E3636 px 0px 0px 0px, 
                  #3E3636 px 2px 5px 0px;
-     color: #F5EDED;
-     font-weight: 600;
+     color:  white;
+     font-size:15px;
+ 
+     font-weight: 20;
      cursor: pointer;
  }
  .field-checkbox input {
